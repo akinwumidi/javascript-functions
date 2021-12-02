@@ -32,7 +32,9 @@ const corners = (state = []) => {
   }
 };
 
-const printCells = (state) => { };
+const printCells = (state) => {
+  return contains.call(state, cell) ? "\u25A3" : "\u25A2";
+};
 
 const getNeighborsOf = ([x, y]) => { };
 
