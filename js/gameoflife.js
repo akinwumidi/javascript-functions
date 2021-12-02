@@ -11,7 +11,10 @@ function contains(cell) {
   return this.some((c) => same(c, cell));
 }
 
-const printCell = (cell, state) => { };
+const printCell = (cell, state) => {
+  // Using ternary operator for If || Else implementation
+  return contains.call(state, cell) ? "u25A3" : "u25A2";
+};
 
 const corners = (state = []) => { };
 
