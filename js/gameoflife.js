@@ -13,7 +13,7 @@ function contains(cell) {
 
 const printCell = (cell, state) => {
   // Using ternary operator for If || Else implementation.
-  return contains.call(state, cell) ? "u25A3" : "u25A2";
+  return contains.call(state, cell) ? "\u25A3" : "\u25A2";
 };
 
 const corners = (state = []) => {
@@ -25,7 +25,7 @@ const corners = (state = []) => {
   }
 
   const xs = state.map(([x, _]) => x);
-  const ys = this.state.map(([_, y]) => y);
+  const ys = state.map(([_, y]) => y);
   return {
     topRight: [Math.max(...xs), Math.max(...ys)],
     bottomLeft: [Math.min(...xs), Math.min(...ys)]
@@ -51,7 +51,9 @@ const getNeighborsOf = ([x, y]) => [
   [x - 1, y - 1], [x, y - 1], [x + 1, y - 1]
 ];
 
-const getLivingNeighbors = (cell, state) => { };
+const getLivingNeighbors = (cell, state) => {
+  return getNeighborsOf(cell).filter((n) => contains.bind(state)(n))
+};
 
 const willBeAlive = (cell, state) => { };
 
