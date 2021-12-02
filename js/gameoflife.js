@@ -12,7 +12,7 @@ function contains(cell) {
 }
 
 const printCell = (cell, state) => {
-  // Using ternary operator for If || Else implementation
+  // Using ternary operator for If || Else implementation.
   return contains.call(state, cell) ? "u25A3" : "u25A2";
 };
 
